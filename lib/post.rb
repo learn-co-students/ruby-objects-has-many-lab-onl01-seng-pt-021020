@@ -16,6 +16,12 @@ class Post
       nil
     end
   end
+  
+  def add_post(post)
+    @post << post 
+  end 
+  
+  def add_post_by_title
 
   def self.all
     @@all
