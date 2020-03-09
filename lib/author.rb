@@ -8,18 +8,24 @@ class Author
     @posts = []
   end 
   
-  def posts 
-    @posts 
+  def self.all
+    @@all 
   end 
   
   def add_post(post)
-    @post.push(post) 
+    post.author = self 
   end 
   
-  def add_post_by_title
+  def posts 
+    Post.all.select {|post| post.author == self} 
   end 
   
-  def self.post_count
+  def add_post_by_title(post)
+    post = Post.new(post)
+    add_post(post)
   end 
+  
+  
+  
   
 end 
